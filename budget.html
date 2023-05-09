@@ -3,19 +3,68 @@
   <head>
     <title>50/30/20 Budget Tracker</title>
     <script src="./js/budget.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/budget.css" />
   </head>
   <body>
-    <h1>50/30/20 Budget Tracker</h1>
-    <label for="income">Income:</label>
-    <input type="number" id="income" />
-    <br /><br />
-    <button onclick="calculate()">Calculate</button>
-    <br /><br />
-    <p>Allocated budget:</p>
-    <ul>
-      <li>Needs: $<span id="needs"></span></li>
-      <li>Wants: $<span id="wants"></span></li>
-      <li>Savings: $<span id="savings"></span></li>
-    </ul>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-lg-6 mx-auto">
+          <div class="card shadow-lg">
+            <div class="card-body">
+              <h2 class="card-title text-center mb-4">
+                50/30/20 Budget Calculator
+              </h2>
+              <form>
+                <div class="mb-3">
+                  <label for="income" class="form-label"
+                    >Enter your monthly income:</label
+                  >
+                  <input
+                    type="number"
+                    step="0.01"
+                    id="income"
+                    class="form-control"
+                  />
+                </div>
+                <div class="text-center">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="calculate()"
+                  >
+                    Calculate
+                  </button>
+                </div>
+              </form>
+              <div id="results" class="mt-5 d-none">
+                <h3 class="text-center mb-3">50/30/20 Budget</h3>
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Category</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Needs</td>
+                      <td id="needs"></td>
+                    </tr>
+                    <tr>
+                      <td>Wants</td>
+                      <td id="wants"></td>
+                    </tr>
+                    <tr>
+                      <td>Savings</td>
+                      <td id="savings"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

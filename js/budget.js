@@ -1,14 +1,34 @@
 function calculate() {
-	// Get user input value
-	var income = parseInt(document.getElementById("income").value);
-
-	// Calculate budget allocations
-	var needsBudget = income * 0.5;
-	var wantsBudget = income * 0.3;
-	var savingsBudget = income * 0.2;
-
-	// Update budget display
-	document.getElementById("needs").innerHTML = needsBudget;
-	document.getElementById("wants").innerHTML = wantsBudget;
-	document.getElementById("savings").innerHTML = savingsBudget;
-}
+    // Get user's input
+    const incomeInput = document.getElementById("income");
+    const income = parseFloat(incomeInput.value);
+  
+    // Calculate budget
+    const needs = (income * 0.5).toFixed(2);
+    const wants = (income * 0.3).toFixed(2);
+    const savings = (income * 0.2).toFixed(2);
+  
+    // Display results
+    const resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = `
+      <table>
+        <tr>
+          <th>Category</th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td>Needs</td>
+          <td>$${needs}</td>
+        </tr>
+        <tr>
+          <td>Wants</td>
+          <td>$${wants}</td>
+        </tr>
+        <tr>
+          <td>Savings</td>
+          <td>$${savings}</td>
+        </tr>
+      </table>
+    `;
+  }
+  
